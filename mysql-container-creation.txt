@@ -1,0 +1,6 @@
+docker run -d \
+  --name mysql-container \
+  -e MYSQL_ROOT_PASSWORD=rootpass \
+  -e MYSQL_DATABASE=metrics_logs \
+  -p 3306:3306 \
+  mysql:8.0

@@ -1,0 +1,10 @@
+CREATE DATABASE metrics_logs;
+
+CREATE TABLE metrics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    server_id INT NOT NULL,
+    cpu_usage INT NOT NULL,
+    mem_usage INT NOT NULL,
+    disk_usage INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

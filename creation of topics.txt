@@ -1,0 +1,18 @@
+##from outside the container
+docker exec -it kafka kafka-topics.sh \
+  --bootstrap-server localhost:9092 \
+  --create \
+  --topic logs \
+  --partitions 1 \
+  --replication-factor 1
+
+
+
+
+docker exec -it kafka kafka-topics.sh \
+  --bootstrap-server localhost:9092 \
+  --create \
+  --topic metrics \
+  --partitions 1 \
+  --replication-factor 1
+
