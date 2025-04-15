@@ -20,13 +20,24 @@ Java program to simulate the agents. You just need to install maven on your syst
 
 ## steps for the approach:
 1- run (docker-compose up -d) to create kafka container
+
 2- create the 2 topics (metrics and logs) from file --->creation of topics 
+
 3- go to file App.java and change these 2 lines (Balancer b = new Balancer("logs") (Server s = new Server(i,"metrics") instead of (Balancer b = new Balancer("test-topic3") (Server s = new Server(i,"test-topic4")
+
 4- create mysql container
 5- go inside mysql container and create (metrics_logs database) and then create the table (metric)
+
 6- run the producer (mvn exec:java)
 7- if you want to see the messages go inside kafka container (docker exec -it kafka bash) then (cd /opt/kafka) then (bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic metrics --from-beginning)
+
 8- install the requirements (pip install -----)
+
 9- run the consumer (which is wrote in jypter-notbook)
+
 10 - go inside the mysql container one more time and you will see the metrics topics is filled with data
+
+11- go to file (hdfs docker) and run docker-compose up -d 
+
+12- and then run the consumer spark to read from the logs topic and save it in hdfs
 
